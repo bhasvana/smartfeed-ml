@@ -1,0 +1,10 @@
+fastapi==0.136.1
+uvicorn==0.47.0
+lightgbm==4.6.0
+scikit-learn==1.8.0
+APScheduler==3.11.2
+streamlit==1.57.0
+altair==6.1.0
+pydantic==2.13.4
+pandas==3.0.3
+numpy==2.4.6
