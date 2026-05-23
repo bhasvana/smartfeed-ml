@@ -1,5 +1,11 @@
 # SmartFeed
 
+[![API Live](https://img.shields.io/badge/API-Live-brightgreen)](https://smartfeed-ml-d543.onrender.com/docs)
+[![Health](https://img.shields.io/badge/Health-Check-blue)](https://smartfeed-ml-d543.onrender.com/health)
+[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
+[![Model](https://img.shields.io/badge/Model-LightGBM-orange)]()
+[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED)](https://hub.docker.com)
+
 A production-style CTR prediction and item ranking system that learns from user behaviour, detects model drift, and retrains itself automatically.
 
 ---
