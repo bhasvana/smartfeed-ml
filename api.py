@@ -16,13 +16,13 @@ FALLBACK_CTR = 0.15
 
 _state: dict = {}
 
-
+# New database connection
 def _con() -> sqlite3.Connection:
     con = sqlite3.connect(DB)
     con.row_factory = sqlite3.Row
     return con
 
-
+# Create a new predictions table
 def _init_predictions_table() -> None:
     with _con() as con:
         con.execute(
@@ -38,7 +38,7 @@ def _init_predictions_table() -> None:
             """
         )
 
-
+# Compute category ctrs at the startup
 def _load_cat_ctrs() -> dict[str, float]:
     with _con() as con:
         rows = con.execute(
@@ -157,6 +157,19 @@ def _log_predictions(user_id: int, ranked: list[RankedItem]) -> None:
 
 
 # ---------- endpoints ----------
+
+@app.get("/")
+def root():
+    return {
+        "name": "SmartFeed Ranking API",
+        "description": "CTR prediction and item ranking service",
+        "version": "1.0.0",
+        "links": {
+            "docs": "/docs",
+            "health": "/health",
+        },
+    }
+
 
 @app.post("/rank", response_model=RankResponse)
 def rank(req: RankRequest):
